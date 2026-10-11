@@ -461,3 +461,109 @@ a:focus-visible {
   border-left: 4px solid var(--color-success);
   background-color: var(--color-success-bg);
 }
+/* ===================================
+   10. Позиционирование
+   =================================== */
+
+/* Sticky-шапка */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Карточка — relative, чтобы бейдж позиционировался относительно неё */
+.product-card {
+  position: relative;
+}
+
+/* Бейдж */
+.product-card__badge {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: 4px 8px;
+  color: var(--color-white);
+  background-color: var(--color-danger);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.product-card__badge--new {
+  background-color: var(--color-success);
+}
+
+/* Фиксированная кнопка «Наверх» */
+.scroll-top {
+  position: fixed;
+  right: var(--space-lg);
+  bottom: var(--space-lg);
+  z-index: 200;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 20px;
+
+  transition: background-color 0.2s ease;
+}
+
+.scroll-top:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.scroll-top:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* ===================================
+   11. Таблица характеристик
+   =================================== */
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-bg);
+}
+
+.product-table caption {
+  padding: var(--space-sm) 0;
+  font-weight: 700;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.product-table th,
+.product-table td {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.product-table th {
+  background-color: var(--color-surface);
+}
+
+/* ===================================
+   12. Страница товара
+   =================================== */
+
+.product-page {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.product-page .product-card {
+  max-width: 640px;
+}
